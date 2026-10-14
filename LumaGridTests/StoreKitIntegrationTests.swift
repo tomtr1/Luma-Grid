@@ -18,7 +18,13 @@ final class StoreKitIntegrationTests: XCTestCase {
         session.clearTransactions()
         progress = ProgressStore(repository: ProgressRepository(storage: InMemoryProgressStorage()))
         store = StoreService(catalog: AppConfiguration.productCatalog, progress: progress, isEnabled: true)
-        await store.loadProducts()
+        // The local StoreKit environment can need a moment after session creation.
+        for _ in 0..<10 {
+            await store.loadProducts()
+            if store.hasAnyProducts { break }
+            try await Task.sleep(for: .milliseconds(500))
+        }
+        print("StoreKitIntegrationTests: loadState=\(store.loadState) products=\(store.products.keys.sorted())")
     }
 
     func testAllConfiguredProductsLoadWithLocalizedPrices() {
