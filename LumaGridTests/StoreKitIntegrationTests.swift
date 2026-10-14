@@ -13,14 +13,8 @@ final class StoreKitIntegrationTests: XCTestCase {
     private var store: StoreService!
 
     override func setUp() async throws {
-        // SKTestSession saves setting changes back into the configuration file, which is
-        // read-only inside the signed test bundle, so run from a writable temporary copy.
-        let bundled = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "LumaGrid", withExtension: "storekit"))
-        let writable = FileManager.default.temporaryDirectory
-            .appendingPathComponent(UUID().uuidString)
-            .appendingPathExtension("storekit")
-        try FileManager.default.copyItem(at: bundled, to: writable)
-        session = try SKTestSession(contentsOf: writable)
+        session = try SKTestSession(configurationFileNamed: "LumaGrid")
+        session.resetToDefaultState()
         session.disableDialogs = true
         session.clearTransactions()
         progress = ProgressStore(repository: ProgressRepository(storage: InMemoryProgressStorage()))

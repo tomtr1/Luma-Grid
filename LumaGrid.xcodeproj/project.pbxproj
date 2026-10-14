@@ -38,6 +38,7 @@
 		B697C94DFB5833A71E83BD69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FFB7FFEDD317281D4C9DE8 /* Assets.xcassets */; };
 		B711B9C6E435394C6B43FA57 /* place.wav in Resources */ = {isa = PBXBuildFile; fileRef = 304F300F4CFD56804914A418 /* place.wav */; };
 		BB0BD896B72AE866DE2BF8C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84131A79FE7AA1814A82AAC4 /* HomeView.swift */; };
+		BB7C2931A8AED2A8F32835D9 /* ScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EBA9353A3AE5E326F32B3B /* ScreenshotTests.swift */; };
 		BC5B9E7064A0A411C4CB808A /* ProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B7F1600111D20183118B73 /* ProgressStore.swift */; };
 		C209E114B25CC6B36F988856 /* AdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64817B097EDF5C4DFEB399C /* AdsManager.swift */; };
 		C6E1AC6C8652691264EC7356 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E7BEC1C822C4102EB94166 /* TutorialView.swift */; };
@@ -116,6 +117,7 @@
 		DAB59C3D7AD23323851532A1 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		E5AD21845BD74BD900F1E2D3 /* LumaGridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumaGridUITests.swift; sourceTree = "<group>"; };
 		F0A11860CE12E9E411C59332 /* LumaGridUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LumaGridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0EBA9353A3AE5E326F32B3B /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
 		F64817B097EDF5C4DFEB399C /* AdsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsManager.swift; sourceTree = "<group>"; };
 		FDEBAE4B0B4B555441D4C963 /* ThemePalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E5AD21845BD74BD900F1E2D3 /* LumaGridUITests.swift */,
+				F0EBA9353A3AE5E326F32B3B /* ScreenshotTests.swift */,
 			);
 			path = LumaGridUITests;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71D2970B624EC86FB24393F /* LumaGridUITests.swift in Sources */,
+				BB7C2931A8AED2A8F32835D9 /* ScreenshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

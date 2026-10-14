@@ -64,6 +64,19 @@ jobs:
             exit 1
           }
           grep -E "Test Suite .* (passed|failed)|Executed" test.log | tail -n 20
+      - name: Export screenshots
+        if: always()
+        run: |
+          mkdir -p screenshots
+          xcrun xcresulttool export attachments --path TestResults.xcresult --output-path screenshots || true
+          ls screenshots | head -n 40
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Screenshots
+          path: screenshots
+          if-no-files-found: ignore
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
