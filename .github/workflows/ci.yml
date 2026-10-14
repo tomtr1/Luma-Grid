@@ -52,6 +52,20 @@ jobs:
           }
           grep -E ": warning:" build.log | grep -v "/SourcePackages/" | sort -u | head -n 60 || true
           tail -n 5 build.log
+      - name: Build simulator app for Appetize.io
+        run: |
+          set -o pipefail
+          xcodebuild build -project LumaGrid.xcodeproj -scheme LumaGrid -configuration Debug \
+            -sdk iphonesimulator -destination "generic/platform=iOS Simulator" \
+            -derivedDataPath build/appetize CODE_SIGNING_ALLOWED=NO > appetize-build.log 2>&1 || { tail -n 40 appetize-build.log; exit 1; }
+          cd build/appetize/Build/Products/Debug-iphonesimulator
+          ditto -c -k --sequesterRsrc --keepParent LumaGrid.app "$GITHUB_WORKSPACE/LumaGrid-Simulator.zip"
+          ls -la "$GITHUB_WORKSPACE/LumaGrid-Simulator.zip"
+      - name: Upload simulator app
+        uses: actions/upload-artifact@v4
+        with:
+          name: LumaGrid-Simulator-for-Appetize
+          path: LumaGrid-Simulator.zip
       - name: Unit and UI tests (Debug)
         run: |
           set -o pipefail
