@@ -1,0 +1,7 @@
+#include "Base.xcconfig"
+
+// Release builds ship with ads disabled until real AdMob IDs are supplied in
+// Config/Secrets.xcconfig (never commit them). The app refuses Google test IDs in Release.
+LUMA_ADS_ENABLED = NO
+
+#include? "Secrets.xcconfig"

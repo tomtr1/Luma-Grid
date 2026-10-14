@@ -1,0 +1,92 @@
+{
+  "identifier": "6A1C2D3E",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "667041D81",
+      "localizations": [
+        {
+          "description": "Removes the ads shown automatically between games. Optional reward ads stay available.",
+          "displayName": "Remove Forced Ads",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.example.lumagrid.removeforcedads",
+      "referenceName": "Remove Forced Ads",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "1.99",
+      "familyShareable": false,
+      "internalID": "CB7642081",
+      "localizations": [
+        {
+          "description": "A violet, star-flecked board and tile palette.",
+          "displayName": "Nebula Theme",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.example.lumagrid.theme.nebula",
+      "referenceName": "Theme Nebula",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "1.99",
+      "familyShareable": false,
+      "internalID": "8337C14F1",
+      "localizations": [
+        {
+          "description": "A warm dawn board and tile palette.",
+          "displayName": "Sunrise Theme",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.example.lumagrid.theme.sunrise",
+      "referenceName": "Theme Sunrise",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "0.99",
+      "familyShareable": false,
+      "internalID": "39FB1B331",
+      "localizations": [
+        {
+          "description": "500 coins for cosmetic themes.",
+          "displayName": "500 Coins",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.example.lumagrid.coins.small",
+      "referenceName": "Coins Small",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "CBD703481",
+      "localizations": [
+        {
+          "description": "1,500 coins for cosmetic themes.",
+          "displayName": "1,500 Coins",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.example.lumagrid.coins.large",
+      "referenceName": "Coins Large",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

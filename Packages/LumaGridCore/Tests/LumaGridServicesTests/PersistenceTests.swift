@@ -183,6 +183,9 @@ final class PersistenceTests: XCTestCase {
         XCTAssertEqual(progress.record(result(300, "2026-01-01"), economy: economy).dailyBonusCoins, 0)
         XCTAssertEqual(progress.daily.bestScores["2026-01-01"], 300)
         XCTAssertEqual(progress.record(result(10, "2026-01-02"), economy: economy).dailyBonusCoins, economy.dailyCompletionBonus)
+        XCTAssertEqual(progress.bestScore, 0, "Daily scores are tracked separately from the classic best")
+        XCTAssertEqual(progress.previousBest(for: .daily(dateKey: "2026-01-01")), 300)
+        XCTAssertEqual(progress.previousBest(for: .classic), 0)
     }
 
     func testCoinThemeUnlockRequiresEnoughCoinsAndPurchasedThemesNeedEntitlement() throws {

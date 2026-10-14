@@ -1,0 +1,905 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		007326B6F5A59F04D077BD82 /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9AFE25E27D937F95DD76672F /* gameover.wav */; };
+		03A44088824E466B14961A60 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3A0C39AABFC2EC6824BFBA /* ShopView.swift */; };
+		2781D55671607E42F19A5014 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBED37BCB625DDDC8F5313 /* GameView.swift */; };
+		33022339C33F321D44DDAFCC /* PulseBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD0B22243CFB798D50295E9 /* PulseBar.swift */; };
+		3996111F7804641C1553015B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD99B62E232036BB8105AB /* GameViewModel.swift */; };
+		3C5E69E21D67EDC12F5570E4 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893D869620D3B5758138411 /* BoardView.swift */; };
+		3C8F8F8D7F7CBE0737C07485 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB83A2556E3BF88EE4D4C8F9 /* TileView.swift */; };
+		462F3A3BFE0CFEA7EC7ED4BD /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DE803817B54B3FCE46FCD9 /* StoreService.swift */; };
+		48EC844C348756294E27DE74 /* TrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C5C32ABA741C36EB2786F /* TrayView.swift */; };
+		5374482A40013F135B091903 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CEB2C388AA6FA4FAB7FFF /* Components.swift */; };
+		5456A70AFD3BFAE0C1EED380 /* charge.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A0BE64E3A653A9A0D214B46 /* charge.wav */; };
+		54DE21DB9BF7FB9A910150CF /* PauseOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409133EEBB309A069AB7E33 /* PauseOverlay.swift */; };
+		5C43D0221A6EF7F10F39C90E /* ConsentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4608ED55F35B794B910E9 /* ConsentCoordinator.swift */; };
+		5D5BE507D7C581E7CEA49165 /* LumaGridEngine in Frameworks */ = {isa = PBXBuildFile; productRef = D296D699678FEA41C3CDF0A1 /* LumaGridEngine */; };
+		6070EBCD580D31626E4386E0 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 73C3F004122E13C6A852C010 /* GoogleMobileAds */; };
+		63233CABC0370A1548E57D87 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4E774167CCD0ED9C6F81AD56 /* PrivacyInfo.xcprivacy */; };
+		65F9723771E8592E086B80D6 /* StoreKitIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC2B3D29F7D43F26D09A86 /* StoreKitIntegrationTests.swift */; };
+		700033714ADCE2905D1722E5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837AC168FCABFA4E6E2E8708 /* RootView.swift */; };
+		7718FC02400AE0A8D08E18EE /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB59C3D7AD23323851532A1 /* AppModel.swift */; };
+		7B08B184178C326C491EAED2 /* LumaGridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDFFDAFA3E28D6EA76B9D9 /* LumaGridApp.swift */; };
+		8BE4CC8B0828B78E3093B89D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A180223475553780F02324A1 /* SettingsView.swift */; };
+		8D82727AD881B11191BC5702 /* combo.wav in Resources */ = {isa = PBXBuildFile; fileRef = C8FD6D8BC38046863E03A57B /* combo.wav */; };
+		914F2D2C293F3672DCD486ED /* GoogleAdProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32846BD4A248227897ABA7D /* GoogleAdProviders.swift */; };
+		91E9EBFDF0320D8E1A963FD7 /* LumaGridServices in Frameworks */ = {isa = PBXBuildFile; productRef = 0BBE7B4615C4F16DF27CA266 /* LumaGridServices */; };
+		983D417F0569144844C41D67 /* GoogleUserMessagingPlatform in Frameworks */ = {isa = PBXBuildFile; productRef = 992837F1174F76B140CDA4B5 /* GoogleUserMessagingPlatform */; };
+		9EE025136F99A4E5B9090149 /* clear.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A570A03AE7A7F82738B2D31 /* clear.wav */; };
+		A2A97C1C78A823C5E79AAB60 /* LumaGrid.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 894CA635EEFC90C4D7D54AE7 /* LumaGrid.storekit */; };
+		A9F3B4E89D02DC6AF67CC5C7 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8901796D8295D262A4BF9 /* FeedbackService.swift */; };
+		B697C94DFB5833A71E83BD69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FFB7FFEDD317281D4C9DE8 /* Assets.xcassets */; };
+		B711B9C6E435394C6B43FA57 /* place.wav in Resources */ = {isa = PBXBuildFile; fileRef = 304F300F4CFD56804914A418 /* place.wav */; };
+		BB0BD896B72AE866DE2BF8C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84131A79FE7AA1814A82AAC4 /* HomeView.swift */; };
+		BC5B9E7064A0A411C4CB808A /* ProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B7F1600111D20183118B73 /* ProgressStore.swift */; };
+		C209E114B25CC6B36F988856 /* AdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64817B097EDF5C4DFEB399C /* AdsManager.swift */; };
+		C6E1AC6C8652691264EC7356 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E7BEC1C822C4102EB94166 /* TutorialView.swift */; };
+		CCA56375970F0603C2FF52E5 /* LumaGridServices in Frameworks */ = {isa = PBXBuildFile; productRef = 69366030653DF05A9FD2D0C2 /* LumaGridServices */; };
+		CCCFD06CE472161C8A0CE324 /* LumaGridEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 1166CA34E8CFC3C852DF2091 /* LumaGridEngine */; };
+		D0F0A2EA97C7653F3D59BCEB /* invalid.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1BC186EBC44B4302E22BB1D9 /* invalid.wav */; };
+		DD7CBAE2AB5A7FE2B9A2EF78 /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414C14799FC37C28D02530D /* GameViewModelTests.swift */; };
+		E155C8237344E147C3404619 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8079E18CE573AD6C28B107C6 /* UIApplication+TopViewController.swift */; };
+		E3E884EA784D6EF84908D9EB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9D827FB2262A8F453ECA4925 /* Localizable.xcstrings */; };
+		E71D2970B624EC86FB24393F /* LumaGridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD21845BD74BD900F1E2D3 /* LumaGridUITests.swift */; };
+		E7B38C27E7D9F3ED8A68A088 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A75B2F19E493F8B9A6C321D /* GameOverView.swift */; };
+		EADD0BA73DDDC45C1DD31CBD /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569A0E6218A58057C72E22C /* AppConfiguration.swift */; };
+		EC82A67F20A81745978B7525 /* pulse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 519490782BAAA7BDF526866C /* pulse.wav */; };
+		F060CABF3AFA1D49F0F9570E /* ThemePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEBAE4B0B4B555441D4C963 /* ThemePalette.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B3063FCFDCBE9D6E94A4114 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 182EFF2A34B40A4AA97DC5D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2038AC177F754CACA431D5AD;
+			remoteInfo = LumaGrid;
+		};
+		9CB1AAF9FA8B8DFA2DF6482C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 182EFF2A34B40A4AA97DC5D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2038AC177F754CACA431D5AD;
+			remoteInfo = LumaGrid;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		000C5C32ABA741C36EB2786F /* TrayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayView.swift; sourceTree = "<group>"; };
+		00B7F1600111D20183118B73 /* ProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStore.swift; sourceTree = "<group>"; };
+		0A570A03AE7A7F82738B2D31 /* clear.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clear.wav; sourceTree = "<group>"; };
+		0D3A0C39AABFC2EC6824BFBA /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
+		0E7CEB2C388AA6FA4FAB7FFF /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		1BC186EBC44B4302E22BB1D9 /* invalid.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = invalid.wav; sourceTree = "<group>"; };
+		22DDFFDAFA3E28D6EA76B9D9 /* LumaGridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumaGridApp.swift; sourceTree = "<group>"; };
+		304F300F4CFD56804914A418 /* place.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = place.wav; sourceTree = "<group>"; };
+		32DD99B62E232036BB8105AB /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		46F8901796D8295D262A4BF9 /* FeedbackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
+		4E774167CCD0ED9C6F81AD56 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		519490782BAAA7BDF526866C /* pulse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pulse.wav; sourceTree = "<group>"; };
+		51F72BDCFED16DAFA9BA6C9A /* LumaGridCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LumaGridCore; path = Packages/LumaGridCore; sourceTree = SOURCE_ROOT; };
+		57CC2B3D29F7D43F26D09A86 /* StoreKitIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitIntegrationTests.swift; sourceTree = "<group>"; };
+		5C3062E4ED3EE69DB20D1AAC /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		5DD0B22243CFB798D50295E9 /* PulseBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseBar.swift; sourceTree = "<group>"; };
+		7220D1153ADA7DA4423A4DB5 /* LumaGrid.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LumaGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76E7BEC1C822C4102EB94166 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		800DE3CDCF438310268511D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8079E18CE573AD6C28B107C6 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
+		837AC168FCABFA4E6E2E8708 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		84131A79FE7AA1814A82AAC4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		85EBED37BCB625DDDC8F5313 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		894CA635EEFC90C4D7D54AE7 /* LumaGrid.storekit */ = {isa = PBXFileReference; path = LumaGrid.storekit; sourceTree = "<group>"; };
+		8A0BE64E3A653A9A0D214B46 /* charge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = charge.wav; sourceTree = "<group>"; };
+		8C8FDB694788823E9FA21E7D /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		91DE803817B54B3FCE46FCD9 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		9409133EEBB309A069AB7E33 /* PauseOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseOverlay.swift; sourceTree = "<group>"; };
+		9A75B2F19E493F8B9A6C321D /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		9AFE25E27D937F95DD76672F /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover.wav; sourceTree = "<group>"; };
+		9D827FB2262A8F453ECA4925 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		A180223475553780F02324A1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A569A0E6218A58057C72E22C /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		A7B2D6E12D5C97FB06860D8E /* LumaGridTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LumaGridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB83A2556E3BF88EE4D4C8F9 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		C1FFB7FFEDD317281D4C9DE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2A4608ED55F35B794B910E9 /* ConsentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentCoordinator.swift; sourceTree = "<group>"; };
+		C32846BD4A248227897ABA7D /* GoogleAdProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdProviders.swift; sourceTree = "<group>"; };
+		C414C14799FC37C28D02530D /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelTests.swift; sourceTree = "<group>"; };
+		C8FD6D8BC38046863E03A57B /* combo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = combo.wav; sourceTree = "<group>"; };
+		D893D869620D3B5758138411 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		DAB59C3D7AD23323851532A1 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		E5AD21845BD74BD900F1E2D3 /* LumaGridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumaGridUITests.swift; sourceTree = "<group>"; };
+		F0A11860CE12E9E411C59332 /* LumaGridUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LumaGridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64817B097EDF5C4DFEB399C /* AdsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsManager.swift; sourceTree = "<group>"; };
+		FDEBAE4B0B4B555441D4C963 /* ThemePalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePalette.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		065401ABE7CDBD6CE76B2D6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D5BE507D7C581E7CEA49165 /* LumaGridEngine in Frameworks */,
+				CCA56375970F0603C2FF52E5 /* LumaGridServices in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A044CFF5393C937F8B21B4AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCCFD06CE472161C8A0CE324 /* LumaGridEngine in Frameworks */,
+				91E9EBFDF0320D8E1A963FD7 /* LumaGridServices in Frameworks */,
+				6070EBCD580D31626E4386E0 /* GoogleMobileAds in Frameworks */,
+				983D417F0569144844C41D67 /* GoogleUserMessagingPlatform in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07018EF96525A5D187A2FD28 /* LumaGridUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E5AD21845BD74BD900F1E2D3 /* LumaGridUITests.swift */,
+			);
+			path = LumaGridUITests;
+			sourceTree = "<group>";
+		};
+		1A06A652F1B7097DD227DCE4 /* LumaGrid */ = {
+			isa = PBXGroup;
+			children = (
+				897761A948B1DBC5E63BE22B /* App */,
+				C85AB8E64E6FF7E4A7885F92 /* DesignSystem */,
+				8DF2A7F323266113EFF734B0 /* Game */,
+				5464E30DDDEFC02A47C1087D /* Monetization */,
+				EBBB31FA2777DBB2DE34073B /* Persistence */,
+				738C3310D09D50DC6C71093A /* Resources */,
+				F614260A6C3ACB73F69AF1C2 /* Settings */,
+				22DDFFDAFA3E28D6EA76B9D9 /* LumaGridApp.swift */,
+			);
+			path = LumaGrid;
+			sourceTree = "<group>";
+		};
+		4F3B6DA2C644B1EE31CB4D65 = {
+			isa = PBXGroup;
+			children = (
+				76C07132C2D5300D1D227405 /* Config */,
+				1A06A652F1B7097DD227DCE4 /* LumaGrid */,
+				E44504078FC899A5549E19DE /* LumaGridTests */,
+				07018EF96525A5D187A2FD28 /* LumaGridUITests */,
+				81EA67B29CAFD8C32D6A7766 /* Packages */,
+				B7A3CB6F1F89AE51B5CC3013 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5464E30DDDEFC02A47C1087D /* Monetization */ = {
+			isa = PBXGroup;
+			children = (
+				78A43346B30F0BD6AB2011B1 /* Ads */,
+				5BA032344C5A838E6CA07FBC /* Purchases */,
+			);
+			path = Monetization;
+			sourceTree = "<group>";
+		};
+		5BA032344C5A838E6CA07FBC /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				0D3A0C39AABFC2EC6824BFBA /* ShopView.swift */,
+				91DE803817B54B3FCE46FCD9 /* StoreService.swift */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
+		68FA91FAC5971CC8376F5CB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D893D869620D3B5758138411 /* BoardView.swift */,
+				9A75B2F19E493F8B9A6C321D /* GameOverView.swift */,
+				85EBED37BCB625DDDC8F5313 /* GameView.swift */,
+				84131A79FE7AA1814A82AAC4 /* HomeView.swift */,
+				9409133EEBB309A069AB7E33 /* PauseOverlay.swift */,
+				5DD0B22243CFB798D50295E9 /* PulseBar.swift */,
+				000C5C32ABA741C36EB2786F /* TrayView.swift */,
+				76E7BEC1C822C4102EB94166 /* TutorialView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		738C3310D09D50DC6C71093A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8301B35AE6971823891A301 /* Sounds */,
+				C1FFB7FFEDD317281D4C9DE8 /* Assets.xcassets */,
+				800DE3CDCF438310268511D4 /* Info.plist */,
+				9D827FB2262A8F453ECA4925 /* Localizable.xcstrings */,
+				894CA635EEFC90C4D7D54AE7 /* LumaGrid.storekit */,
+				4E774167CCD0ED9C6F81AD56 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		76C07132C2D5300D1D227405 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8C8FDB694788823E9FA21E7D /* Debug.xcconfig */,
+				5C3062E4ED3EE69DB20D1AAC /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		78A43346B30F0BD6AB2011B1 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				F64817B097EDF5C4DFEB399C /* AdsManager.swift */,
+				C2A4608ED55F35B794B910E9 /* ConsentCoordinator.swift */,
+				C32846BD4A248227897ABA7D /* GoogleAdProviders.swift */,
+				8079E18CE573AD6C28B107C6 /* UIApplication+TopViewController.swift */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		81EA67B29CAFD8C32D6A7766 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				51F72BDCFED16DAFA9BA6C9A /* LumaGridCore */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		897761A948B1DBC5E63BE22B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A569A0E6218A58057C72E22C /* AppConfiguration.swift */,
+				DAB59C3D7AD23323851532A1 /* AppModel.swift */,
+				837AC168FCABFA4E6E2E8708 /* RootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8DF2A7F323266113EFF734B0 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				BC3FF322342D8A74AE3FF249 /* ViewModels */,
+				68FA91FAC5971CC8376F5CB6 /* Views */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		B7A3CB6F1F89AE51B5CC3013 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7220D1153ADA7DA4423A4DB5 /* LumaGrid.app */,
+				A7B2D6E12D5C97FB06860D8E /* LumaGridTests.xctest */,
+				F0A11860CE12E9E411C59332 /* LumaGridUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8301B35AE6971823891A301 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				8A0BE64E3A653A9A0D214B46 /* charge.wav */,
+				0A570A03AE7A7F82738B2D31 /* clear.wav */,
+				C8FD6D8BC38046863E03A57B /* combo.wav */,
+				9AFE25E27D937F95DD76672F /* gameover.wav */,
+				1BC186EBC44B4302E22BB1D9 /* invalid.wav */,
+				304F300F4CFD56804914A418 /* place.wav */,
+				519490782BAAA7BDF526866C /* pulse.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		BC3FF322342D8A74AE3FF249 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				32DD99B62E232036BB8105AB /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C85AB8E64E6FF7E4A7885F92 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				0E7CEB2C388AA6FA4FAB7FFF /* Components.swift */,
+				FDEBAE4B0B4B555441D4C963 /* ThemePalette.swift */,
+				AB83A2556E3BF88EE4D4C8F9 /* TileView.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		E44504078FC899A5549E19DE /* LumaGridTests */ = {
+			isa = PBXGroup;
+			children = (
+				C414C14799FC37C28D02530D /* GameViewModelTests.swift */,
+				57CC2B3D29F7D43F26D09A86 /* StoreKitIntegrationTests.swift */,
+			);
+			path = LumaGridTests;
+			sourceTree = "<group>";
+		};
+		EBBB31FA2777DBB2DE34073B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				00B7F1600111D20183118B73 /* ProgressStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		F614260A6C3ACB73F69AF1C2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				46F8901796D8295D262A4BF9 /* FeedbackService.swift */,
+				A180223475553780F02324A1 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2038AC177F754CACA431D5AD /* LumaGrid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152C7A6D2134D3C0F6FB3C2B /* Build configuration list for PBXNativeTarget "LumaGrid" */;
+			buildPhases = (
+				60052DA67ED78D15CC9D0D9A /* Validate Release Configuration */,
+				321FAF199E60BEEBB16E90B3 /* Sources */,
+				F9969F0DDEBB733334931597 /* Resources */,
+				A044CFF5393C937F8B21B4AC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LumaGrid;
+			packageProductDependencies = (
+				1166CA34E8CFC3C852DF2091 /* LumaGridEngine */,
+				0BBE7B4615C4F16DF27CA266 /* LumaGridServices */,
+				73C3F004122E13C6A852C010 /* GoogleMobileAds */,
+				992837F1174F76B140CDA4B5 /* GoogleUserMessagingPlatform */,
+			);
+			productName = LumaGrid;
+			productReference = 7220D1153ADA7DA4423A4DB5 /* LumaGrid.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5462A56658F5001ACFC31E02 /* LumaGridTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A9476B86F074291921D2495 /* Build configuration list for PBXNativeTarget "LumaGridTests" */;
+			buildPhases = (
+				A0D0250E04A7AAAD8F496692 /* Sources */,
+				1E4DFF106CAA3590DB710C24 /* Resources */,
+				065401ABE7CDBD6CE76B2D6B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2562B212F2FE01A11BFBA107 /* PBXTargetDependency */,
+			);
+			name = LumaGridTests;
+			packageProductDependencies = (
+				D296D699678FEA41C3CDF0A1 /* LumaGridEngine */,
+				69366030653DF05A9FD2D0C2 /* LumaGridServices */,
+			);
+			productName = LumaGridTests;
+			productReference = A7B2D6E12D5C97FB06860D8E /* LumaGridTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F6C4E9B614A312C134ADCC90 /* LumaGridUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6B4D317BBDAB77FC535ED3B /* Build configuration list for PBXNativeTarget "LumaGridUITests" */;
+			buildPhases = (
+				455D25A66E1BD9BD91E3F76C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C3DBC0929FFDC70E2341C0E /* PBXTargetDependency */,
+			);
+			name = LumaGridUITests;
+			packageProductDependencies = (
+			);
+			productName = LumaGridUITests;
+			productReference = F0A11860CE12E9E411C59332 /* LumaGridUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		182EFF2A34B40A4AA97DC5D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					F6C4E9B614A312C134ADCC90 = {
+						TestTargetID = 2038AC177F754CACA431D5AD;
+					};
+				};
+			};
+			buildConfigurationList = 9C0E5F257C700364F9466402 /* Build configuration list for PBXProject "LumaGrid" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 4F3B6DA2C644B1EE31CB4D65;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FB870D9FEE998E8159E7ACA5 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				66E38A694D820CAF663C042B /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */,
+				84CA26C5AEBF97BD10A35173 /* XCLocalSwiftPackageReference "Packages/LumaGridCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B7A3CB6F1F89AE51B5CC3013 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2038AC177F754CACA431D5AD /* LumaGrid */,
+				5462A56658F5001ACFC31E02 /* LumaGridTests */,
+				F6C4E9B614A312C134ADCC90 /* LumaGridUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E4DFF106CAA3590DB710C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A97C1C78A823C5E79AAB60 /* LumaGrid.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9969F0DDEBB733334931597 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B697C94DFB5833A71E83BD69 /* Assets.xcassets in Resources */,
+				E3E884EA784D6EF84908D9EB /* Localizable.xcstrings in Resources */,
+				63233CABC0370A1548E57D87 /* PrivacyInfo.xcprivacy in Resources */,
+				5456A70AFD3BFAE0C1EED380 /* charge.wav in Resources */,
+				9EE025136F99A4E5B9090149 /* clear.wav in Resources */,
+				8D82727AD881B11191BC5702 /* combo.wav in Resources */,
+				007326B6F5A59F04D077BD82 /* gameover.wav in Resources */,
+				D0F0A2EA97C7653F3D59BCEB /* invalid.wav in Resources */,
+				B711B9C6E435394C6B43FA57 /* place.wav in Resources */,
+				EC82A67F20A81745978B7525 /* pulse.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60052DA67ED78D15CC9D0D9A /* Validate Release Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Scripts/validate_release_config.sh",
+			);
+			name = "Validate Release Configuration";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Scripts/validate_release_config.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		321FAF199E60BEEBB16E90B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C209E114B25CC6B36F988856 /* AdsManager.swift in Sources */,
+				EADD0BA73DDDC45C1DD31CBD /* AppConfiguration.swift in Sources */,
+				7718FC02400AE0A8D08E18EE /* AppModel.swift in Sources */,
+				3C5E69E21D67EDC12F5570E4 /* BoardView.swift in Sources */,
+				5374482A40013F135B091903 /* Components.swift in Sources */,
+				5C43D0221A6EF7F10F39C90E /* ConsentCoordinator.swift in Sources */,
+				A9F3B4E89D02DC6AF67CC5C7 /* FeedbackService.swift in Sources */,
+				E7B38C27E7D9F3ED8A68A088 /* GameOverView.swift in Sources */,
+				2781D55671607E42F19A5014 /* GameView.swift in Sources */,
+				3996111F7804641C1553015B /* GameViewModel.swift in Sources */,
+				914F2D2C293F3672DCD486ED /* GoogleAdProviders.swift in Sources */,
+				BB0BD896B72AE866DE2BF8C3 /* HomeView.swift in Sources */,
+				7B08B184178C326C491EAED2 /* LumaGridApp.swift in Sources */,
+				54DE21DB9BF7FB9A910150CF /* PauseOverlay.swift in Sources */,
+				BC5B9E7064A0A411C4CB808A /* ProgressStore.swift in Sources */,
+				33022339C33F321D44DDAFCC /* PulseBar.swift in Sources */,
+				700033714ADCE2905D1722E5 /* RootView.swift in Sources */,
+				8BE4CC8B0828B78E3093B89D /* SettingsView.swift in Sources */,
+				03A44088824E466B14961A60 /* ShopView.swift in Sources */,
+				462F3A3BFE0CFEA7EC7ED4BD /* StoreService.swift in Sources */,
+				F060CABF3AFA1D49F0F9570E /* ThemePalette.swift in Sources */,
+				3C8F8F8D7F7CBE0737C07485 /* TileView.swift in Sources */,
+				48EC844C348756294E27DE74 /* TrayView.swift in Sources */,
+				C6E1AC6C8652691264EC7356 /* TutorialView.swift in Sources */,
+				E155C8237344E147C3404619 /* UIApplication+TopViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		455D25A66E1BD9BD91E3F76C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E71D2970B624EC86FB24393F /* LumaGridUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0D0250E04A7AAAD8F496692 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7CBAE2AB5A7FE2B9A2EF78 /* GameViewModelTests.swift in Sources */,
+				65F9723771E8592E086B80D6 /* StoreKitIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2562B212F2FE01A11BFBA107 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2038AC177F754CACA431D5AD /* LumaGrid */;
+			targetProxy = 9CB1AAF9FA8B8DFA2DF6482C /* PBXContainerItemProxy */;
+		};
+		2C3DBC0929FFDC70E2341C0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2038AC177F754CACA431D5AD /* LumaGrid */;
+			targetProxy = 5B3063FCFDCBE9D6E94A4114 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FE26B5F51D5E0F3A8F7D725 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C8FDB694788823E9FA21E7D /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		35611830A32B5FC73B0514BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LumaGrid/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "$(inherited) -ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(LUMA_BUNDLE_ID)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		59A3FC358C4898091C71F46A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(LUMA_BUNDLE_ID).uitests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LumaGrid;
+			};
+			name = Release;
+		};
+		7796B89B3122CC755B248484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(LUMA_BUNDLE_ID).tests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LumaGrid.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LumaGrid";
+			};
+			name = Debug;
+		};
+		7E2DE048388C55C2839F91B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LumaGrid/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "$(inherited) -ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(LUMA_BUNDLE_ID)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C9174E636806C6F9C400375F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(LUMA_BUNDLE_ID).uitests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LumaGrid;
+			};
+			name = Debug;
+		};
+		D43D933050299EB4765120A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C3062E4ED3EE69DB20D1AAC /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D58E39335D3384985ACB1BBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(LUMA_BUNDLE_ID).tests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LumaGrid.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LumaGrid";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		152C7A6D2134D3C0F6FB3C2B /* Build configuration list for PBXNativeTarget "LumaGrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E2DE048388C55C2839F91B3 /* Debug */,
+				35611830A32B5FC73B0514BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5A9476B86F074291921D2495 /* Build configuration list for PBXNativeTarget "LumaGridTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7796B89B3122CC755B248484 /* Debug */,
+				D58E39335D3384985ACB1BBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9C0E5F257C700364F9466402 /* Build configuration list for PBXProject "LumaGrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FE26B5F51D5E0F3A8F7D725 /* Debug */,
+				D43D933050299EB4765120A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A6B4D317BBDAB77FC535ED3B /* Build configuration list for PBXNativeTarget "LumaGridUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9174E636806C6F9C400375F /* Debug */,
+				59A3FC358C4898091C71F46A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		84CA26C5AEBF97BD10A35173 /* XCLocalSwiftPackageReference "Packages/LumaGridCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/LumaGridCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		66E38A694D820CAF663C042B /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+		FB870D9FEE998E8159E7ACA5 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0BBE7B4615C4F16DF27CA266 /* LumaGridServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LumaGridServices;
+		};
+		1166CA34E8CFC3C852DF2091 /* LumaGridEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LumaGridEngine;
+		};
+		69366030653DF05A9FD2D0C2 /* LumaGridServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LumaGridServices;
+		};
+		73C3F004122E13C6A852C010 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB870D9FEE998E8159E7ACA5 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		992837F1174F76B140CDA4B5 /* GoogleUserMessagingPlatform */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66E38A694D820CAF663C042B /* XCRemoteSwiftPackageReference "swift-package-manager-google-user-messaging-platform" */;
+			productName = GoogleUserMessagingPlatform;
+		};
+		D296D699678FEA41C3CDF0A1 /* LumaGridEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LumaGridEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 182EFF2A34B40A4AA97DC5D6 /* Project object */;
+}

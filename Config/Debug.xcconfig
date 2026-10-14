@@ -1,0 +1,10 @@
+#include "Base.xcconfig"
+
+// Debug builds use Google's official sample ad IDs only, so development never generates
+// real ad traffic. Source: Google Mobile Ads iOS docs ("Enable test ads").
+LUMA_ADS_ENABLED = YES
+LUMA_GAD_APP_ID = ca-app-pub-3940256099942544~1458002511
+LUMA_GAD_INTERSTITIAL_ID = ca-app-pub-3940256099942544/4411468910
+LUMA_GAD_REWARDED_ID = ca-app-pub-3940256099942544/1712485313
+
+#include? "Secrets.xcconfig"

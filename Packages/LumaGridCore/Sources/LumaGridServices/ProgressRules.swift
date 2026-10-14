@@ -16,11 +16,22 @@ public enum ThemeUnlockResult: Equatable, Sendable {
 }
 
 extension PlayerProgress {
+    /// The best score a result should be compared against: the classic best, or that day's
+    /// best for a daily puzzle (daily scores do not count toward the classic best).
+    public func previousBest(for mode: GameMode) -> Int {
+        switch mode {
+        case .classic: return bestScore
+        case let .daily(dateKey): return daily.bestScores[dateKey] ?? 0
+        }
+    }
+
     /// Folds a finished round into progress: best score, stats, coins, daily record.
     /// Clears the saved game, because the round is over.
     @discardableResult
     public mutating func record(_ result: GameResult, economy: EconomyConfiguration) -> RoundPayout {
-        bestScore = max(bestScore, result.score)
+        if result.mode == .classic {
+            bestScore = max(bestScore, result.score)
+        }
         stats.gamesPlayed += 1
         stats.linesCleared += result.linesCleared
         stats.totalScore += result.score

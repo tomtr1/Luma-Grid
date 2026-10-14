@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<!--
+  Privacy manifest for LumaGrid's own code.
+  - LumaGrid's code does not track users, collects no personal data, and has no account system.
+  - Progress is stored in a local JSON file in Application Support; UserDefaults is not used.
+  - The Google Mobile Ads and UMP SDKs ship their own privacy manifests, which Xcode merges into
+    the app's privacy report. Review that report before filling in App Privacy in App Store Connect.
+-->
+<dict>
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array/>
+</dict>
+</plist>
