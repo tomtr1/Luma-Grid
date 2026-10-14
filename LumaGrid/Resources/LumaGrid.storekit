@@ -5,7 +5,7 @@
     {
       "displayPrice": "2.99",
       "familyShareable": false,
-      "internalID": "667041D81",
+      "internalID": "6740000001",
       "localizations": [
         {
           "description": "Removes the ads shown automatically between games. Optional reward ads stay available.",
@@ -20,7 +20,7 @@
     {
       "displayPrice": "1.99",
       "familyShareable": false,
-      "internalID": "CB7642081",
+      "internalID": "6740000002",
       "localizations": [
         {
           "description": "A violet, star-flecked board and tile palette.",
@@ -35,7 +35,7 @@
     {
       "displayPrice": "1.99",
       "familyShareable": false,
-      "internalID": "8337C14F1",
+      "internalID": "6740000003",
       "localizations": [
         {
           "description": "A warm dawn board and tile palette.",
@@ -50,7 +50,7 @@
     {
       "displayPrice": "0.99",
       "familyShareable": false,
-      "internalID": "39FB1B331",
+      "internalID": "6740000004",
       "localizations": [
         {
           "description": "500 coins for cosmetic themes.",
@@ -65,7 +65,7 @@
     {
       "displayPrice": "2.99",
       "familyShareable": false,
-      "internalID": "CBD703481",
+      "internalID": "6740000005",
       "localizations": [
         {
           "description": "1,500 coins for cosmetic themes.",
@@ -82,7 +82,53 @@
     "_failTransactionsEnabled": false,
     "_locale": "en_US",
     "_storefront": "USA",
-    "_storeKitErrors": []
+    "_storeKitErrors": [
+      {
+        "current": null,
+        "enabled": false,
+        "name": "Load Products"
+      },
+      {
+        "current": null,
+        "enabled": false,
+        "name": "Purchase"
+      },
+      {
+        "current": null,
+        "enabled": false,
+        "name": "Verification"
+      },
+      {
+        "current": null,
+        "enabled": false,
+        "name": "App Store Sync"
+      },
+      {
+        "current": null,
+        "enabled": false,
+        "name": "Subscription Status"
+      },
+      {
+        "current": null,
+        "enabled": false,
+        "name": "App Transaction"
+      },
+      {
+        "current": null,
+        "enabled": false,
+        "name": "Manage Subscriptions Sheet"
+      },
+      {
+        "current": null,
+        "enabled": false,
+        "name": "Refund Request Sheet"
+      },
+      {
+        "current": null,
+        "enabled": false,
+        "name": "Offer Code Redeem Sheet"
+      }
+    ]
   },
   "subscriptionGroups": [],
   "version": {

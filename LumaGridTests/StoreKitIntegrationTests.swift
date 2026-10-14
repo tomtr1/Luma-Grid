@@ -22,7 +22,9 @@ final class StoreKitIntegrationTests: XCTestCase {
     }
 
     func testAllConfiguredProductsLoadWithLocalizedPrices() {
-        XCTAssertEqual(store.loadState, .loaded)
+        XCTAssertEqual(store.loadState, .loaded, "load state: \(store.loadState)")
+        XCTAssertEqual(store.products.count, AppConfiguration.productCatalog.allIDs.count,
+                       "Loaded \(store.products.keys.sorted()) for \(AppConfiguration.productCatalog.allIDs)")
         for id in AppConfiguration.productCatalog.allIDs {
             let product = store.product(for: id)
             XCTAssertNotNil(product, "Missing \(id) in LumaGrid.storekit")
