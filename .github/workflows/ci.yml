@@ -58,7 +58,8 @@ jobs:
           xcodebuild test -project LumaGrid.xcodeproj -scheme LumaGrid -configuration Debug \
             -destination "id=${{ steps.sim.outputs.udid }}" \
             -resultBundlePath TestResults.xcresult > test.log 2>&1 || {
-            grep -E ": (error|fatal error):|error: -\[|failed \(|Test Case .* failed" test.log | sort -u | head -n 100
+            grep -E -A3 "error: -\[" test.log | head -n 150
+            grep -E "Test Case .* failed|StoreKitIntegrationTests:" test.log | sort -u | head -n 50
             tail -n 60 test.log
             exit 1
           }
