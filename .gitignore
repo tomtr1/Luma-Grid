@@ -1,0 +1,28 @@
+# Xcode / build output
+build/
+DerivedData/
+*.xcresult
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/*/.build/
+Packages/*/.swiftpm/
+
+# Local secrets and machine-specific configuration (see Config/Secrets.example.xcconfig)
+Config/Secrets.xcconfig
+*.p8
+*.p12
+*.mobileprovision
+.env
+
+# macOS
+.DS_Store
