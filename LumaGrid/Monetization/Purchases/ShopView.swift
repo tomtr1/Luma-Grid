@@ -103,56 +103,46 @@ struct ShopView: View {
     }
 
     private func themeRow(_ theme: ThemeDefinition) -> some View {
-        let progress = app.progress.progress
-        let unlocked = progress.isThemeUnlocked(theme)
-        let selected = progress.selectedThemeID == theme.id
         let palette = ThemePalette(theme)
-
         return HStack(spacing: 14) {
-            HStack(spacing: 3) {
-                ForEach(0..<palette.tiles.count, id: \.self) { index in
-                    TileView(color: palette.tile(index), size: 16)
-                }
-            }
-            .padding(8)
-            .background(palette.background, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-            .accessibilityHidden(true)
-
+            ThemeSwatch(palette: palette)
             Text(ThemeText.name(for: theme.id))
                 .font(.system(.headline, design: .rounded))
                 .foregroundStyle(LumaColors.text)
-
             Spacer()
-
-            if selected {
-                Label("Selected", systemImage: "checkmark.circle.fill")
-                    .labelStyle(.titleAndIcon)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(palette.accent)
-            } else if unlocked {
-                Button("Use") { app.progress.update { $0.selectTheme(theme) } }
-                    .buttonStyle(LumaButtonStyle(kind: .subtle))
-            } else {
-                switch theme.unlock {
-                case .free:
-                    EmptyView()
-                case let .coins(price):
-                    Button {
-                        themeToUnlock = theme
-                    } label: {
-                        Label("\(price)", systemImage: "circle.hexagongrid.fill")
-                    }
-                    .buttonStyle(LumaButtonStyle(kind: .subtle))
-                    .disabled(progress.coins < price)
-                    .accessibilityLabel(Text("Unlock for \(price) coins"))
-                case let .purchase(productID):
-                    purchaseButton(productID: productID)
-                }
-            }
+            themeAction(theme, accent: palette.accent)
         }
         .padding(12)
-        .background(LumaColors.panel, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(RoundedRectangle(cornerRadius: 16, style: .continuous).fill(LumaColors.panel))
         .accessibilityElement(children: .contain)
+    }
+
+    @ViewBuilder
+    private func themeAction(_ theme: ThemeDefinition, accent: Color) -> some View {
+        let progress: PlayerProgress = app.progress.progress
+        if progress.selectedThemeID == theme.id {
+            Label("Selected", systemImage: "checkmark.circle.fill")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(accent)
+        } else if progress.isThemeUnlocked(theme) {
+            Button("Use") { selectTheme(theme) }
+                .buttonStyle(LumaButtonStyle(kind: .subtle))
+        } else if case let .coins(price) = theme.unlock {
+            Button {
+                themeToUnlock = theme
+            } label: {
+                Label("\(price)", systemImage: "circle.hexagongrid.fill")
+            }
+            .buttonStyle(LumaButtonStyle(kind: .subtle))
+            .disabled(progress.coins < price)
+            .accessibilityLabel(Text("Unlock for \(price) coins"))
+        } else if case let .purchase(productID) = theme.unlock {
+            purchaseButton(productID: productID)
+        }
+    }
+
+    private func selectTheme(_ theme: ThemeDefinition) {
+        _ = app.progress.update { progress -> Bool in progress.selectTheme(theme) }
     }
 
     private var removeAdsSection: some View {
@@ -174,7 +164,7 @@ struct ShopView: View {
                 }
             }
             .padding(12)
-            .background(LumaColors.panel, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .background(RoundedRectangle(cornerRadius: 16, style: .continuous).fill(LumaColors.panel))
         }
     }
 
@@ -197,7 +187,7 @@ struct ShopView: View {
                     purchaseButton(productID: definition.id)
                 }
                 .padding(12)
-                .background(LumaColors.panel, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .background(RoundedRectangle(cornerRadius: 16, style: .continuous).fill(LumaColors.panel))
             }
         }
     }
@@ -314,5 +304,21 @@ struct ShopView: View {
         case .restored: return Text("Any Remove Forced Ads or theme purchases on your Apple Account are now active.")
         case let .restoreFailed(message): return Text(message)
         }
+    }
+}
+
+/// Five-tile preview of a theme's palette.
+private struct ThemeSwatch: View {
+    let palette: ThemePalette
+
+    var body: some View {
+        HStack(spacing: 3) {
+            ForEach(Array(palette.tiles.indices), id: \.self) { index in
+                TileView(color: palette.tile(index), size: 16)
+            }
+        }
+        .padding(8)
+        .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(palette.background))
+        .accessibilityHidden(true)
     }
 }
