@@ -63,7 +63,8 @@ jobs:
             tail -n 60 test.log
             exit 1
           }
-          grep -E "Test Suite .* (passed|failed)|Executed" test.log | tail -n 20
+          grep -iE "test (suite|case) .*(passed|failed|skipped)|executed [0-9]+ test" test.log | tail -n 40 || true
+          tail -n 15 test.log
       - name: Export screenshots
         if: always()
         run: |
