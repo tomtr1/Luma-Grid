@@ -69,6 +69,18 @@ targets:
         inputFiles:
           - $(SRCROOT)/Scripts/validate_release_config.sh
         basedOnDependencyAnalysis: false
+    postBuildScripts:
+      - name: Embed StoreKit Test Configuration (Debug only)
+        script: |
+          # StoreKit testing (SKTestSession in LumaGridTests) resolves the configuration from the
+          # host app bundle as well as the test bundle. Release builds never include it.
+          if [ "${CONFIGURATION}" = "Debug" ]; then
+            cp "${SCRIPT_INPUT_FILE_0}" "${SCRIPT_OUTPUT_FILE_0}"
+          fi
+        inputFiles:
+          - $(SRCROOT)/LumaGrid/Resources/LumaGrid.storekit
+        outputFiles:
+          - $(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/LumaGrid.storekit
     scheme:
       testTargets:
         - LumaGridTests

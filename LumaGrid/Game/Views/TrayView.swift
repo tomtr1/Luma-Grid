@@ -70,7 +70,7 @@ struct TrayView: View {
         .contentShape(Rectangle())
         .gesture(
             DragGesture(minimumDistance: 0, coordinateSpace: .named(GameView.coordinateSpaceName))
-                .onChanged { value in game.beginDrag(slot: slot, at: value.location) }
+                .onChanged { value in game.beginDrag(slot: slot, at: value.location, translation: value.translation) }
                 .onEnded { value in game.endDrag(slot: slot, at: value.location, translation: value.translation) }
         )
         .accessibilityElement(children: .ignore)

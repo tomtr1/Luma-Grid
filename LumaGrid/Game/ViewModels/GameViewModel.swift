@@ -52,6 +52,9 @@ final class GameViewModel {
         if session.needsPulseToContinue { showHint(.usePulse) }
     }
 
+    /// Finger movement (points) below which a touch on a tray piece counts as a tap.
+    static let tapSlop: CGFloat = 6
+
     // MARK: Derived
 
     var cellSize: CGFloat { boardFrame.width / CGFloat(session.board.size) }
@@ -71,8 +74,11 @@ final class GameViewModel {
 
     // MARK: Drag & drop
 
-    func beginDrag(slot: Int, at location: CGPoint) {
+    /// Called for every finger movement. The piece lifts only after a few points of movement,
+    /// so a plain tap selects it instead (tap-to-place).
+    func beginDrag(slot: Int, at location: CGPoint, translation: CGSize) {
         guard isInteractive, session.tray.piece(inSlot: slot) != nil, drag == nil || drag?.slot == slot else { return }
+        if drag == nil, hypot(translation.width, translation.height) < Self.tapSlop { return }
         if drag == nil {
             app.feedback.prepare()
             app.feedback.play(.pickUp)
@@ -95,12 +101,12 @@ final class GameViewModel {
 
     /// `translation` is the total finger movement; a near-zero movement is treated as a tap.
     func endDrag(slot: Int, at location: CGPoint, translation: CGSize) {
-        guard drag?.slot == slot else { return }
-        if hypot(translation.width, translation.height) < 8 {
-            drag = nil
+        if drag == nil || hypot(translation.width, translation.height) < Self.tapSlop {
+            if drag?.slot == slot { drag = nil }
             tapSlot(slot)
             return
         }
+        guard drag?.slot == slot else { return }
         updateDrag(slot: slot, location: location)
         guard let current = drag else { return }
         if current.isValid, let origin = current.origin {

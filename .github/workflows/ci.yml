@@ -70,6 +70,31 @@ jobs:
           mkdir -p screenshots
           xcrun xcresulttool export attachments --path TestResults.xcresult --output-path screenshots || true
           ls screenshots | head -n 40
+      - name: Print crash reports and screenshot previews
+        if: always()
+        run: |
+          for f in screenshots/*.ips; do
+            [ -e "$f" ] || continue
+            echo "=== CRASH REPORT $f"
+            head -c 12000 "$f"; echo
+          done
+          python3 - <<'PY'
+          import json, os, subprocess, base64
+          d = "screenshots"
+          if os.path.exists(os.path.join(d, "manifest.json")):
+              for test in json.load(open(os.path.join(d, "manifest.json"))):
+                  for a in test.get("attachments", []):
+                      src = os.path.join(d, a["exportedFileName"])
+                      if not src.endswith(".png"):
+                          continue
+                      out = src + ".jpg"
+                      subprocess.run(["sips", "-Z", "560", "-s", "format", "jpeg", "-s", "formatOptions", "55", src, "--out", out], capture_output=True)
+                      data = base64.b64encode(open(out, "rb").read()).decode()
+                      name = a["suggestedHumanReadableName"].split("_0_")[0]
+                      print(f"=== SCREENSHOT {name} {len(data)}")
+                      print(data)
+                      print("=== END SCREENSHOT")
+          PY
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
