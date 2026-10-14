@@ -40,7 +40,9 @@ final class GameViewModel {
     var trayCellSize: CGFloat = 16
     var reduceMotion = false
 
-    @ObservationIgnored private unowned let app: AppModel
+    // Strong reference: AppModel outlives every game it creates, and replacing `app.game` frees
+    // the old view model, so there is no lasting cycle. (`unowned` crashed when late tasks ran.)
+    @ObservationIgnored private let app: AppModel
     @ObservationIgnored private var popupTask: Task<Void, Never>?
     @ObservationIgnored private var hintTask: Task<Void, Never>?
 
