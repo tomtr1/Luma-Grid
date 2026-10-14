@@ -10,6 +10,8 @@ struct LumaButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(.headline, design: .rounded).weight(.semibold))
+            .lineLimit(1)
+            .fixedSize(horizontal: kind == .subtle, vertical: false)
             .foregroundStyle(foreground)
             .padding(.vertical, 14)
             .padding(.horizontal, 22)

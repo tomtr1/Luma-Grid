@@ -354,7 +354,6 @@
 				321FAF199E60BEEBB16E90B3 /* Sources */,
 				F9969F0DDEBB733334931597 /* Resources */,
 				A044CFF5393C937F8B21B4AC /* Frameworks */,
-				222252E081A85357EDD429F5 /* Embed StoreKit Test Configuration (Debug only) */,
 			);
 			buildRules = (
 			);
@@ -480,26 +479,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		222252E081A85357EDD429F5 /* Embed StoreKit Test Configuration (Debug only) */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/LumaGrid/Resources/LumaGrid.storekit",
-			);
-			name = "Embed StoreKit Test Configuration (Debug only)";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/LumaGrid.storekit",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# StoreKit testing (SKTestSession in LumaGridTests) resolves the configuration from the\n# host app bundle as well as the test bundle. Release builds never include it.\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  cp \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"\nfi\n";
-		};
 		60052DA67ED78D15CC9D0D9A /* Validate Release Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;

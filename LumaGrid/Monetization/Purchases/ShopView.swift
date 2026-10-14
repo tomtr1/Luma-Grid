@@ -14,6 +14,13 @@ struct ShopView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
+                    HStack {
+                        Text("Your coins")
+                            .font(.system(.subheadline, design: .rounded).weight(.semibold))
+                            .foregroundStyle(LumaColors.secondaryText)
+                        Spacer()
+                        CoinBadge(amount: app.progress.progress.coins)
+                    }
                     storeStatus
                     themesSection
                     removeAdsSection
@@ -27,9 +34,6 @@ struct ShopView: View {
             .navigationTitle("Shop")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    CoinBadge(amount: app.progress.progress.coins)
-                }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
                 }

@@ -2,11 +2,13 @@
 
 ## Environment this was built in
 
-The code was written in a Linux container (Ubuntu 24.04, x86_64). There was **no macOS, Xcode, or iOS Simulator** available.
-- `LumaGridCore` (engine + services) was compiled and its tests were run with Swift 6.1 in Docker (`swift:6.1-noble`).
-- The iOS app sources (SwiftUI, StoreKit, Google Mobile Ads/UMP) could only be checked with `swiftc -parse`, which catches syntax errors but does no type-checking. They were also reviewed by hand against current API usage, including Google's official Swift samples for GMA 13.x and UMP 3.x.
-- `LumaGrid.xcodeproj` was generated with XcodeGen 2.x (built from source on Linux) from `project.yml`.
-- `.github/workflows/ci.yml` builds and tests the app on a GitHub macOS runner. **That workflow is the first real compile of the iOS target**, so check its result (see the end of this file).
+The code was written in a Linux container (Ubuntu 24.04, x86_64) with no local Xcode. Verification happened in two places:
+- **Locally (Docker, Swift 6.1):** `LumaGridCore` builds and its 79 tests pass.
+- **GitHub Actions, `macos-26-arm64`, Xcode 26.6, iOS 26.5 simulator** (`.github/workflows/ci.yml`):
+  - Release configuration build of the app (ads disabled, no credentials): **succeeded**, with no compiler warnings from LumaGrid sources.
+  - Debug test run: `GameViewModelTests` (3) **passed**. UI tests `LumaGridUITests` (2) and `ScreenshotTests` (1) **passed**. The screenshot test drives Home → tutorial → game → tap-to-place → drag-and-drop → pause → Home/Continue → Shop → Settings on the simulator, and its screenshots were reviewed (this caught a shop layout bug, now fixed).
+  - `StoreKitIntegrationTests` (5) **could not run** on the hosted runner: the local StoreKit test environment returned no products (`SKTestSession: Error saving configuration file`, `SKInternalErrorDomain` 3). This persisted across several attempts: format v3 and v5, a writable copy, `resetToDefaultState`, and bundling the file in the host app. The tests now **skip with that reason** when no products load. They have not passed anywhere yet; run them from Xcode on a local Mac.
+- `LumaGrid.xcodeproj` is generated with XcodeGen from `project.yml`.
 
 ## Phase checklist
 
@@ -34,7 +36,9 @@ Persistence: round-trip, missing save, corrupted bytes (quarantined), wrong fiel
 
 Monetization: interstitial cadence over 9 games, 180 s gap, rolling-hour cap, clock moved backwards, pacing persistence, Remove Forced Ads, no consent → no ads, ad not loaded, reward only on earned callback, duplicate callbacks grant once, closed early, unavailable / load failure / fail to present, concurrent taps, stale callbacks, ad ID validation (Debug test-only, Release no sample IDs, missing/unexpanded values), verified vs unverified, duplicate consumable, revoked non-consumable, revoked consumable, unknown product, restore rebuilds only verified non-consumables and never touches coins.
 
-**Not run** (need Xcode on macOS): `LumaGridTests` (StoreKit test session: product loading, consumable grant per transaction, Remove Forced Ads restore after a wiped cache, failed purchase, Ask to Buy pending; view model: tap-to-place, invalid tap, game-over bookkeeping) and `LumaGridUITests` (play → pause → home → continue; shop/settings open and close). Also not done: simulator or device play-testing, layout checks on small and large iPhones, VoiceOver pass, live or test ad loading, the consent form, and sandbox purchases.
+**App-level (CI, iOS Simulator):** view-model tests and UI/screenshot tests pass (see above). StoreKit integration tests are skipped on the hosted runner.
+
+**Not done:** physical-device play-testing, a small-iPhone layout check (CI used a single large iPhone simulator), a VoiceOver pass, loading Google test ads and showing the UMP form (ads are disabled under test launches), sandbox purchases, and a full round played to game over through the UI. Game over is covered by engine and view-model tests.
 
 ## Design decisions
 
@@ -49,7 +53,7 @@ Monetization: interstitial cadence over 9 games, 180 s gap, rolling-hour cap, cl
 
 ## Known risks and remaining work
 
-1. **The iOS target has not been compiled by me.** Type errors are possible; check CI. Areas most likely to need small fixes: SwiftUI coordinate-space overloads (`.named(...)`), Swift 5-mode actor isolation warnings around the GMA delegate callbacks, and Google SDK API names if a newer major version changes them.
+1. **StoreKit integration tests have not passed anywhere yet** (see above). The StoreKit glue in `StoreService` compiles, but real purchases have not been exercised. Run the tests locally in Xcode and test with Sandbox before release.
 2. **Google Mobile Ads without an app ID:** the SDK may abort at launch if `GADApplicationIdentifier` is empty. Release builds currently ship ads disabled with an empty ID. The build phase blocks *archives* without an ID, but a local Release run might still crash. Unverified. Configure a real app ID before any Release distribution.
 3. **Duplicate static linking** of `LumaGridEngine`/`LumaGridServices` into both the app and the hosted unit-test bundle may produce "class implemented in both" warnings. If types mismatch at runtime in tests, remove the package dependencies from `LumaGridTests` in `project.yml`.
 4. Rewarded-ad reward callbacks are assumed to arrive before the ad's dismissal callback (Google's documented behavior). A callback after dismissal is ignored by design.
